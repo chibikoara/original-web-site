@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>銀河系</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
+    />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/star.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="splash"></div>
+
+    <div id="main-content">
+      <header class="header">
+        <div class="header__container">
+          <h1 class="header__logo">
+            <a href="./home.html"
+              ><img src="./assets/img/space.jpg" alt=""
+            /></a>
+          </h1>
+          <button type="button" class="hamburger">
+            <span></span>
+          </button>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a href="./home.html">宇宙</a></li>
+              <li class="nav__item"><a href="./solar.html">太陽系</a></li>
+              <li class="nav__item"><a href="./star.html">銀河</a></li>
+              <li class="nav__item"><a id="sns" href="footer">sns</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main id="main">
+        <div class="circle-container">
+          <!-- 100 circles will be dynamically generated via CSS or JS -->
+        </div>
+        <div class="custom-cursor"></div>
+
+        <section id="section1">
+          <div class="title-container">
+            <h1 class="vertical-title">銀河</h1>
+          </div>
+        </section>
+        <section id="section2">
+          <div id="box-intro">
+            <h2>銀河とは</h2>
+            <p id="intro">
+              太陽とその重力によって公転する天体から構成される惑星系。年齢は約45億6800万年。
+            </p>
+            <div class="test__container">
+              <div class="test-slick">
+                <div class="test-slick__item">
+                  <img
+                    src="./assets/img/galaxy1.jpg"
+                    alt=""
+                    width="500"
+                    height="233"
+                  />
+                </div>
+                <div class="test-slick__item">
+                  <img
+                    src="./assets/img/galaxy2.jpg"
+                    alt=""
+                    width="500"
+                    height="233"
+                  />
+                </div>
+                <div class="test-slick__item">
+                  <img
+                    src="./assets/img/galaxy3.jpg"
+                    alt=""
+                    width="500"
+                    height="233"
+                  />
+                </div>
+                <div class="test-slick__item">
+                  <img
+                    src="./assets/img/galaxy4.jpg"
+                    alt=""
+                    width="500"
+                    height="233"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="section3">
+          <div id="sec3_title">有名な銀河</div>
+
+          <div class="galaxy-container">
+            <!-- 天の川銀河 -->
+            <div id="milky" class="gala">
+              <div class="gala_title">天の川銀河</div>
+              <img
+                class="gala_img"
+                src="./assets/img/milkyway.jpg"
+                alt="天の川銀河"
+                data-description="これは天の川銀河の説明です。"
+              />
+            </div>
+
+            <!-- アンドロメダ銀河 -->
+            <div id="andromeda" class="gala">
+              <div class="gala_title">アンドロメダ銀河</div>
+              <img
+                class="gala_img"
+                src="./assets/img/R.jpg"
+                alt="アンドロメダ銀河"
+                data-description="これはアンドロメダ銀河の説明です。"
+              />
+            </div>
+            <div id="sonbrera" class="gala">
+              <div class="gala_title">ソンブレロ銀河</div>
+              <img
+                class="gala_img"
+                src="./assets/img/sonbrero.jpg"
+                alt="ソンブレロ銀河"
+                data-description="これはアンドロメダ銀河の説明です。"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- モーダル -->
+        <div id="modal" class="hidden">
+          <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <button id="modal-close">閉じる</button>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div id="return_home" class="footer_button">
+          <a href="./home.html">
+            <i class="fa-solid fa-earth-americas fa-3x"></i>
+          </a>
+        </div>
+        <div class="container">
+          <p id="nasa">JAXAの公式アカウントはこちら</p>
+          <div id="container_sns">
+            <a
+              href="https://x.com/ISAS_JAXA?ref_src=twsrc%5Etfw"
+              target="_blank"
+            >
+              <div class="btn btn--1">
+                <div class="content">
+                  <div class="front">
+                    <div class="border"></div>
+                    <i class="fa-brands fa-x-twitter fa-2x"></i>
+                  </div>
+                  <div class="back">
+                    <div class="border"></div>
+                    <p>★</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="https://www.youtube.com/user/jaxasgm" target="_blank">
+              <div class="btn btn--2">
+                <div class="content">
+                  <div class="front">
+                    <div class="border"></div>
+                    <i class="fab fa-youtube"></i>
+                  </div>
+                  <div class="back">
+                    <div class="border"></div>
+                    <p>★</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/isas_jaxa/" target="_blank">
+              <div class="btn btn--3">
+                <div class="content">
+                  <div class="front">
+                    <div class="border"></div>
+                    <i class="fab fa-instagram"></i>
+                  </div>
+                  <div class="back">
+                    <div class="border"></div>
+                    <p>★</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div id="return_top">
+          <button class="footer_button" id="toTop">▲</button>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="./assets/js/star.js"></script>
+  </body>
+</html>

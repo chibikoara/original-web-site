@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>太陽系</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/solar.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="splash"></div>
+
+    <div id="main-content">
+      <header class="header">
+        <div class="header__container">
+          <h1 class="header__logo">
+            <a href="./home.html"
+              ><img src="./assets/img/space.jpg" alt=""
+            /></a>
+          </h1>
+          <button type="button" class="hamburger">
+            <span></span>
+          </button>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a href="./home.html">宇宙</a></li>
+              <li class="nav__item"><a href="./solar.html">太陽系</a></li>
+              <li class="nav__item"><a href="./star.html">銀河</a></li>
+              <li class="nav__item"><a id="sns" href="#footer">sns</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main id="main">
+        <div class="circle-container">
+          <!-- 100 circles will be dynamically generated via CSS or JS -->
+        </div>
+
+        <div class="custom-cursor"></div>
+
+
+        <section id="section1">
+          <div class="title-container">
+            <h1 class="vertical-title">太陽系</h1>
+          </div>
+        </section>
+        <section id="section2">
+          <div id="box-intro">
+            <h2>太陽系とは</h2>
+            <p id="intro">
+              太陽とその重力によって公転する天体から構成される惑星系。年齢は約45億6800万年。
+            </p>
+            <img src="./assets/img/solar-system.jpg" alt="" />
+          </div>
+        </section>
+
+        <section id="section3">
+          <div id="kind">
+            <h2>太陽系の星の種類</h2>
+          </div>
+          <div id="container">
+            <a id="current-link" href="#exp_sun" target="_blank">
+              <img id="current-image" src="./assets/img/sun.jpg" alt="sun" />
+              <p>太陽</p>
+            </a>
+          </div>
+          <div id="button">
+            <button id="prev" class="nav-button">←</button>
+            <div id="indicators"></div>
+            <button id="next" class="nav-button">→</button>
+          </div>
+        </section>
+        <section id="section4">
+          <div class="explain" id="exp_sun" data-description="約48億年前にガス星雲という薄い水素があるだけのところに,突如として大きなガスの渦巻きが現れたのが太陽の始まりである。その後中心部分で水素がヘリウムに変わる核融合が起こってから太陽は輝き始めた。太陽はガスでできた巨大な球体であり,熱や光などの莫大なエネルギーを生み出している。">
+            <div class="subtitle">
+              <img src="./assets/img/sun.jpg" alt="" />
+              <h3>太陽</h3>
+            </div>
+            <div class="detail">
+              <p>
+                直径：1,392,000 km, 質量：2.0 ×10<sup>30</sup>kg,
+                地球との相対重力：28G <br />
+                天の川銀河系の恒星の1つ。太陽系の中心であり,太陽系の全質量の99.8%を占める。
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+          </div>
+          <div class="explain" id="exp_mercury" data-description="惑星の中で太陽に最も近い公転軌道を周回している。太陽系で最小の惑星である。">
+            <div class="detail">
+              <p>
+                直径：4,900 km, 質量：3.3 ×10<sup>23</sup>kg,
+                地球との相対重力：0.37G <br />
+                表面には多数のクレーターが有り、地球の衛星の月と類似した環境だろうと考えられている。
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+
+            <div class="subtitle">
+              <img src="./assets/img/mercury.jpg" alt="" />
+              <h3>水星</h3>
+            </div>
+          </div>
+          <div class="explain" id="exp_venus" data-description="地球に最も近い太陽周回軌道を持つ惑星である。太陽系内で大きさと平均密度が最も地球に似た惑星であるため,「地球の姉妹惑星」、「地球の兄弟星」、と表現されることがある。また、太陽系の惑星の中で最も真円に近い公転軌道を持っている。地球から見た金星は常に太陽の近傍に見えることから明け方と夕方にのみ観測でき、太陽、月に次いで明るく見える天体のため、明け方に見えるものを「明けの明星」、夕方に見えるものを「宵の明星」という。">
+            <div class="subtitle">
+              <img src="./assets/img/venus.jpg" alt="" />
+              <h3>金星</h3>
+            </div>
+            <div class="detail">
+              <p>
+                直径：12,103 km, 質量：4.9 ×10<sup>24</sup>kg,
+                地球との相対重力：0.9G <br />
+                太陽系内で大きさと平均密度がもっとも地球に似た惑星である。
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+          </div>
+          <div class="explain" id="exp_earth" data-description="水が蒸発せず,氷にもならない絶妙な距離感が保たれた惑星であり,液体の水が存在している。">
+            <div class="detail">
+              <p>
+                直径：12,756 km, 質量：5.9 ×10<sup>24</sup>kg,
+                地球との相対重力：1G <br />
+                表面に水、空気中に酸素を大量に蓄え、人類を含む多種多様な生命体が生存することを特徴とする惑星である
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+
+            <div class="subtitle">
+              <img src="./assets/img/earth.jpg" alt="" />
+              <h3>地球</h3>
+            </div>
+          </div>
+          <div class="explain" id="exp_mars" data-description="太陽系内では水星より大きく2番目に小さい惑星である。火星の表面に存在する酸化鉄の影響で,独特の赤みを帯びた外観を持っており,赤い惑星と呼ばれる。">
+            <div class="subtitle">
+              <img src="./assets/img/mars.jpg" alt="" />
+              <h3>火星</h3>
+            </div>
+            <div class="detail">
+              <p>
+                直径：6,800 km, 質量：6.4 ×10<sup>23</sup>kg,
+                地球との相対重力：0.38G <br />
+                太陽系最大の火山であり、最も高い山として知られるオリンポス山や、太陽系最大の峡谷のひとつであるマリネリス峡谷がある。
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+          </div>
+          <div class="explain" id="exp_jupiter" data-description="太陽系の中で大きさ,質量ともに最大の惑星となっており,ガスを主成分としている木星型惑星(巨大ガス惑星)である。">
+            <div class="detail">
+              <p>
+                直径：142,984 km, 質量：1.9 ×10<sup>27</sup>kg,
+                地球との相対重力：2.5G <br />
+                太陽系の中で大きさ、質量ともに最大の惑星である。
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+
+            <div class="subtitle">
+              <img src="./assets/img/jupiter.jpg" alt="" />
+              <h3>木星</h3>
+            </div>
+          </div>
+          <div class="explain" id="exp_saturn" data-description="太陽系の中で2番目に大きな惑星であり,巨大ガス惑星に属している。平均半径は地球の約9倍となっているが,平均密度は地球の1/8であるため,巨大な体積のわりにそこまで質量は大きくない。風速は木星を上回る1800km/hに達するが,海王星ほどではない。">
+            <div class="subtitle">
+              <img src="./assets/img/saturn.jpg" alt="" />
+              <h3>土星</h3>
+            </div>
+            <div class="detail">
+              <p>
+                直径：120,536 km, 質量：5.6 ×10<sup>26</sup>kg,
+                地球との相対重力：0.9G <br />
+                太陽系の中では木星に次いで2番目に大きな惑星である。
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+          </div>
+          <div class="explain" id="exp_uranus" data-description="自転軸が極端に傾いており,黄道面に対しほぼ横倒しとなっている。公転周期が約84年なので極点では昼と夜がそれぞれ42時間つづく。">
+            <div class="detail">
+              <p>
+                直径：25,559 km, 質量：8.6 ×10<sup>25</sup>kg,
+                地球との相対重力：0.8G <br />
+                天王星は主にガスと多様な氷から成っている。
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+
+            <div class="subtitle">
+              <img src="./assets/img/uranus.jpg" alt="" />
+              <h3>天王星</h3>
+            </div>
+          </div>
+          <div class="explain" id="exp_neptune" data-description="太陽系のガス惑星のなかでは最も密度が高く,観測された最大風速は2100km/hになる。">
+            <div class="subtitle">
+              <img src="./assets/img/neptune.jpg" alt="" />
+              <h3>海王星</h3>
+            </div>
+            <div class="detail">
+              <p>
+                直径：24,622 km, 質量：1.0 ×10<sup>26</sup>kg,
+                地球との相対重力：1.1G <br />
+                直径は4番目、質量は3番目に大きく、地球の17倍の質量を持ち、太陽系のガス惑星としては最も密度が高い。
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+          </div>
+          <div id="modal" class="hidden">
+            <div class="modal-content">
+              <h2 id="modal-title"></h2>
+              <p id="modal-description"></p>
+              <button id="modal-close">閉じる</button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer id="footer">
+        <div id="return_home" class="footer_button">
+          <a href="./home.html">
+            <i class="fa-solid fa-earth-americas fa-3x"></i>
+          </a>
+        </div>
+        <div class="container">
+          <p id="nasa">JAXAの公式アカウントはこちら</p>
+          <div id="container_sns">
+            <a
+              href="https://x.com/ISAS_JAXA?ref_src=twsrc%5Etfw"
+              target="_blank"
+            >
+              <div class="btn btn--1">
+                <div class="content">
+                  <div class="front">
+                    <div class="border"></div>
+                    <i class="fa-brands fa-x-twitter fa-2x"></i>
+                  </div>
+                  <div class="back">
+                    <div class="border"></div>
+                    <p>★</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="https://www.youtube.com/user/jaxasgm" target="_blank">
+              <div class="btn btn--2">
+                <div class="content">
+                  <div class="front">
+                    <div class="border"></div>
+                    <i class="fab fa-youtube"></i>
+                  </div>
+                  <div class="back">
+                    <div class="border"></div>
+                    <p>★</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/isas_jaxa/" target="_blank">
+              <div class="btn btn--3">
+                <div class="content">
+                  <div class="front">
+                    <div class="border"></div>
+                    <i class="fab fa-instagram"></i>
+                  </div>
+                  <div class="back">
+                    <div class="border"></div>
+                    <p>★</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div id="return_top">
+          <button class="footer_button" id="toTop">▲</button>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://82mou.github.io/threejs/js/three.js"></script>
+    <script src="https://82mou.github.io/threejs/js/OrbitControls.js"></script>
+    <!-- PreloadJSの読み込み -->
+    <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./assets/js/solar.js"></script>
+    <script src="./assets/js/so_system.js"></script>
+  </body>
+</html>

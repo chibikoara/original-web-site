@@ -1,0 +1,788 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic",
+    メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  background-image: url(../img/back1.jpg);
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+/* カスタムカーソルのスタイル */
+.custom-cursor {
+  width: 40px;
+  height: 40px;
+  border: 2px solid white; /* ボーダーを追加 */
+  border-radius: 50%; /* 円形にする場合 */
+  background: url("../img/utyuu4.png") center/contain no-repeat;
+  position: absolute;
+  pointer-events: none; /* カーソルが要素に干渉しないようにする */
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* スプラッシュ画面 */
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  background-image: url(../img/galaxy3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease; /* フェードアウトのアニメーション */
+}
+
+/* フェードアウト用のクラス */
+#splash.fade-out {
+  opacity: 0;
+  pointer-events: none; /* ユーザー操作をブロックしないように */
+}
+
+/* メインコンテンツ（初期状態ではスプラッシュ画面の下に隠れている） */
+#main-content {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* スプラッシュ画面が消えた後にメインコンテンツを表示 */
+#main-content.visible {
+  opacity: 1;
+}
+
+.header {
+  height: 80px;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header__container {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  color: #fff;
+  padding: 0 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header__logo a {
+  text-decoration: none;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+}
+
+.header__logo a img {
+  width: 100px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  top: 20px;
+  right: 20px;
+  animation: slow-rotate 100s linear infinite;
+}
+/* 回転アニメーションの定義 */
+@keyframes slow-rotate {
+  0% {
+    transform: rotate(0deg); /* 開始時は0度 */
+  }
+  100% {
+    transform: rotate(360deg); /* 一周 */
+  }
+}
+
+.hamburger {
+  width: 50px;
+  height: 80px;
+  position: relative;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.hamburger span {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.5s;
+}
+
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.5s;
+}
+
+.hamburger span::before {
+  top: 10px;
+}
+
+.hamburger span::after {
+  bottom: 10px;
+}
+
+.nav {
+  position: fixed;
+  width: 30%;
+  top: 80px;
+  background-color: rgba(56, 54, 54, 0.5);
+  padding: 50px 0;
+  transition: all 0.5s;
+  border-radius: 20px;
+  right: -100%; /* 画面右端のさらに外へ配置 */
+}
+.nav.open {
+  right: 15px; /* クリックされたら、画面内にスライドイン */
+}
+
+.nav__list {
+  list-style: none;
+}
+
+.nav__item a {
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px 0 20px 50px;
+  text-transform: uppercase;
+}
+
+.nav__item a:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.hamburger.open span {
+  background-color: transparent;
+}
+
+.hamburger.open span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.hamburger.open span::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+/* タブレットサイズ */
+@media (max-width: 1024px) {
+  .header__container {
+    padding: 0 30px;
+  }
+
+  .header__logo a img {
+    width: 80px;
+  }
+
+  .nav {
+    width: 40%;
+  }
+}
+
+/* スマートフォンサイズ */
+@media (max-width: 768px) {
+  .header__container {
+    padding: 0 20px;
+  }
+
+  .header__logo a img {
+    width: 60px;
+  }
+
+  .nav {
+    width: 50%;
+  }
+
+  .nav__item a {
+    font-size: 18px;
+    padding: 15px 0 15px 30px;
+  }
+}
+
+main {
+  top: 14px;
+}
+
+.circle-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  background-image: radial-gradient(
+    hsl(180, 100%, 80%),
+    hsl(180, 100%, 80%) 10%,
+    hsla(180, 100%, 80%, 0) 56%
+  );
+  animation: fade-frames 200ms infinite, scale-frames 2s infinite;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: moveCircle infinite ease-in-out alternate;
+}
+
+@keyframes moveCircle {
+  to {
+    transform: translate(30px, 30px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes fade-frames {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-frames {
+  0% {
+    transform: scale(0.4);
+  }
+  50% {
+    transform: scale(2.2);
+  }
+  100% {
+    transform: scale(0.4);
+  }
+}
+
+#section1 {
+  /* background-image: url(../img/back1.jpg); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px dotted rgb(60, 59, 59);
+}
+
+/* タイトル全体のスタイル */
+.title-container {
+  left: 200px;
+  position: relative;
+  height: 100vh; /* 全画面高さ */
+  display: flex;
+  justify-content: flex-end; /* 右寄せ */
+  align-items: center; /* 垂直方向の中央寄せ */
+  overflow: hidden; /* フェードイン時の見切れ防止 */
+}
+
+/* タイトルの縦書きスタイル */
+.vertical-title {
+  color: rgba(255, 255, 255, 0.7);
+  writing-mode: vertical-rl; /* 縦書き */
+  text-orientation: upright; /* 文字を回転させない */
+  font-size: 300px; /* フォントサイズ調整 */
+  font-weight: bold;
+  opacity: 0; /* フェードイン前は非表示 */
+  transform: translateZ(-100px); /* 手前からの動きを再現 */
+  transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+    0 0 50px rgba(255, 255, 255, 0.6);
+}
+
+/* フェードイン時のスタイル */
+.vertical-title.visible {
+  opacity: 1;
+  transform: translateZ(0); /* 元の位置へ移動 */
+}
+
+/* タブレットサイズ調整 */
+@media (max-width: 1024px) {
+  .vertical-title {
+    font-size: 200px; /* フォントサイズを縮小 */
+  }
+
+  .title-container {
+    left: 100px; /* 左側の余白を調整 */
+  }
+}
+
+/* スマートフォンサイズ調整 */
+@media (max-width: 768px) {
+  .vertical-title {
+    font-size: 150px; /* フォントサイズをさらに縮小 */
+  }
+
+  .title-container {
+    left: 50px; /* 左側の余白をさらに縮小 */
+    justify-content: center; /* タイトルを中央寄せ */
+  }
+}
+
+#section2 {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px dotted rgb(60, 59, 59);
+  margin-top: 100px;
+}
+
+#box-intro {
+  background-color: transparent;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#box-intro h2 {
+  color: white;
+  font-size: 400%;
+}
+
+#intro {
+  font-size: 30px;
+  color: white;
+}
+
+.test-slick {
+  width: 100%;
+  max-width: 800px;
+  margin: 15px auto;
+  overflow: hidden;
+  border: #ffffff;
+  border-radius: 20px;
+}
+
+.test-slick__item {
+  margin-right: 5px;
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.test-slick__item img {
+  height: auto;
+  width: 100%;
+}
+
+.add-anime {
+  animation: zoom-anime 10s linear 0s normal both;
+}
+
+@keyframes zoom-anime {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+#section3 {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  height: auto;
+  margin-top: 60px;
+}
+
+#sec3_title {
+  color: white;
+  background-color: transparent;
+  font-size: 40px;
+}
+
+/* 銀河コンテナのスタイル */
+.galaxy-container {
+  display: flex;
+  flex-wrap: wrap; /* 幅が足りない場合に折り返し */
+  justify-content: center; /* コンテンツを中央揃え */
+  gap: 1rem; /* 要素間のスペース */
+  margin: 1rem auto;
+}
+
+/* 個々の銀河のスタイル */
+.gala {
+  flex: 0 1 calc(50% - 1rem); /* 幅を1/3に */
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.gala:hover {
+  transform: scale(1.05); /* ホバー時に拡大 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  filter: brightness(150%);
+}
+
+/* 画像のスタイル */
+.gala_img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+/* 銀河タイトル */
+.gala_title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .gala {
+    flex: 0 1 100%; /* 幅を100%に */
+  }
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 1000;
+}
+
+#modal.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: linear-gradient(to bottom, #222, #444);
+  color: whitesmoke;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  text-align: center;
+  animation: pop-in 0.5s ease;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  margin-bottom: 1.5rem;
+}
+
+#modal-close {
+  padding: 0.5rem 1rem;
+  background-color: #ff5757;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#modal-close:hover {
+  background-color: #ff3333;
+}
+
+@keyframes pop-in {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+footer {
+  margin-top: 500px;
+  width: 100vw;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: auto 100px;
+  background: linear-gradient(to bottom, #1e1e30, #3b3b5b);
+}
+
+#return_home a {
+  text-decoration: none;
+}
+
+#return_home a i {
+  color: white;
+}
+
+.footer_button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  font-size: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#toTop {
+  font-size: 50px;
+}
+
+.footer_button:hover {
+  background-color: #2f4053;
+}
+
+.container {
+  background: linear-gradient(to bottom, #1e302f, #3b515b);
+  height: 150px;
+  width: 50%; /* 幅を画面幅に対して相対的に設定 */
+  max-width: 500px; /* 最大幅を設定 */
+  min-width: 300px; /* 最小幅を設定 */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5), -2px 2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px; /* 高さが縮む可能性を考慮して50pxに調整 */
+}
+
+#nasa {
+  color: whitesmoke;
+  margin: 10px auto 0;
+  font-size: 1rem; /* 相対フォントサイズに変更 */
+  text-align: center; /* テキスト中央揃え */
+}
+
+#container_sns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: auto; /* 高さ自動調整 */
+}
+
+.btn {
+  width: 10vw; /* 画面幅の10% */
+  height: 10vw; /* 画面幅の10% */
+  max-width: 80px; /* 最大サイズ */
+  max-height: 80px; /* 最大サイズ */
+  min-width: 50px; /* 最小サイズ */
+  min-height: 50px; /* 最小サイズ */
+  border-radius: 50%;
+  cursor: pointer;
+}
+.btn .content {
+  width: 100%; /* 親の幅に合わせる */
+  height: 100%; /* 親の高さに合わせる */
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.3);
+  display: grid;
+  justify-items: center;
+  position: relative;
+  transition: transform 600ms;
+  transform-style: preserve-3d;
+  background: #fff;
+  perspective: 1000px;
+}
+
+.btn .content .front {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(2rem);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.btn .content .front .border {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateZ(2rem);
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  border: 4px solid rgba(0, 0, 0, 0.7);
+  backface-visibility: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.btn .content .back {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(-2rem) rotateY(0.5turn);
+  text-align: center;
+  font-family: sans-serif;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.btn .content .back p {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.btn .content .back .border {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(-1rem);
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 0, 0, 0.7);
+  backface-visibility: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.btn .front i {
+  font-size: 1.5rem; /* アイコンのサイズを相対的に設定 */
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+.btn:hover .content {
+  transform: rotateY(0.5turn) rotateX(-0.03turn);
+}
+.btn--1 i {
+  color: #00acee;
+}
+.btn--2 i {
+  color: #c4302b;
+}
+
+@media (max-width: 1024px) {
+  .footer_button {
+    width: 80px;
+    height: 80px;
+    font-size: 20px;
+  }
+
+  .container {
+    width: 80%; /* タブレットサイズで幅を広げる */
+  }
+
+  .btn {
+    width: 12vw;
+    height: 12vw;
+    max-width: 70px;
+    max-height: 70px;
+  }
+}
+
+/* スマートフォンサイズ */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column; /* フッター内を縦並び */
+    align-items: center;
+  }
+
+  .footer_button {
+    width: 60px;
+    height: 60px;
+    font-size: 16px;
+  }
+
+  .container {
+    width: 90%; /* スマホサイズで幅を広げる */
+    min-width: 200px;
+  }
+
+  .btn {
+    width: 15vw;
+    height: 15vw;
+    max-width: 60px;
+    max-height: 60px;
+  }
+
+  #nasa {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    width: 18vw;
+    height: 18vw;
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  #nasa {
+    font-size: 0.8rem;
+  }
+}

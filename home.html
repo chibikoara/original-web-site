@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>universe</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/home.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="splash">
+      <div id="logo"><img src="./assets/img/space.jpg" alt="" /></div>
+    </div>
+
+    <div id="main-content">
+      <header class="header">
+        <div class="header__container">
+          <h1 class="header__logo">
+            <a href="./home.html"
+              ><img src="./assets/img/space.jpg" alt=""
+            /></a>
+          </h1>
+          <button type="button" class="hamburger">
+            <span></span>
+          </button>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a href="./home.html">宇宙</a></li>
+              <li class="nav__item"><a href="./solar.html">太陽系</a></li>
+              <li class="nav__item"><a href="./star.html">銀河</a></li>
+              <li class="nav__item"><a id="sns" href="#footer">sns</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main id="main">
+        <div class="circle-container">
+          <!-- 100 circles will be dynamically generated via CSS or JS -->
+        </div>
+
+        <!-- <div id="floating-image">
+          <img src="./assets/img/utyuu (2).png" alt="">
+        </div> -->
+        <div class="custom-cursor"></div>
+
+        <section id="section1">
+          <div class="title-container">
+            <h1 class="vertical-title">宇宙</h1>
+            <p class="vertical-subtitle">果てしない可能性と未知の世界</p>
+          </div>
+        </section>
+
+        <section id="intro-section">
+          <div class="intro-content">
+            <h2>宇宙の不思議</h2>
+            <p>
+              宇宙は無限の広がりと未知の世界で満ちています。<br />
+              銀河、惑星、星雲、ブラックホールなど、私たちの想像を超えた存在がたくさんあります。
+            </p>
+          </div>
+          <div class="floating-icons">
+            <img
+              src="./assets/img/icon1.png"
+              alt="Planet"
+              class="icon icon-1"
+            />
+            <img
+              src="./assets/img/icon2.png"
+              alt="Shuttle"
+              class="icon icon-2"
+            />
+            <img
+              src="./assets/img/icon3.png"
+              alt="Meteor"
+              class="icon icon-3"
+            />
+            <img
+              src="./assets/img/space-rocket.png"
+              alt="Satellite"
+              class="icon icon-4"
+            />
+            <img src="./assets/img/icon4.png" alt="Moon" class="icon icon-5" />
+          </div>
+        </section>
+
+        <section id="section3">
+          <h1><span>各用語の説明</span></h1>
+
+          <div id="container">
+            <div
+              class="detail"
+              data-description="自ら光を発し,その質量がもたらす重力による収縮に反する圧力を内部に持ち支えるガス体の天体の総称。地球から見てそれぞれの恒星の位置関係は変わらないため,星座を構成している。"
+            >
+              <h2>恒星</h2>
+              <img src="./assets/img/sun.jpg" alt="" />
+              <p>自ら光を発している星のこと。<br>例:太陽,星座の星</p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+            <div
+              class="detail"
+              data-description="恒星の周りを回る天体のうち、比較的低質量のものをいう。恒星に次いでその恒星系で比較的大きく,自重力により球体である。太陽系には惑星は8つ存在している。"
+            >
+              <h2>惑星</h2>
+              <img src="./assets/img/earth.jpg" alt="" />
+              <p>
+                恒星の周りを回っている自ら光ることのない星のこと。<br />例:地球などの太陽系の星
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+            <div
+              class="detail"
+              data-description="惑星や準惑星・小惑星の周りを公転する天然の天体。太陽系の惑星を回る衛星は150個以上ある。"
+            >
+              <h2>衛星</h2>
+              <img src="./assets/img/moon.jpg" alt="" />
+              <p>惑星の周りを回っている比較的小さい星のこと。<br />例:月</p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+            <div
+              class="detail"
+              data-description="太陽系小天体のうち,おもに氷や固体微粒子でできており,塵やガス,イオンの尾(テイル)を生じるもののこと。"
+            >
+              <h2>彗星</h2>
+              <img src="./assets/img/comet.jpg" alt="" />
+              <p>
+                太陽系小天体のうち,ガスやイオンによる尾をもった星のこと。<br />例:ハレー彗星
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+            <div
+              class="detail"
+              data-description="太陽系小天体のうち,彗星のような拡散成分をもたないもののこと。"
+            >
+              <h2>小惑星</h2>
+              <img src="./assets/img/itokawa.jpg" alt="" />
+              <p>
+                太陽系小天体のうち,彗星のような拡散成分をもたない星のこと。<br />例:イトカワ
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+            <div
+              class="detail"
+              data-description="恒星やコンパクト星,ガス状の星間物質や宇宙塵,暗黒物質などが重力によって拘束された巨大な天体。"
+            >
+              <h2>銀河</h2>
+              <img src="./assets/img/galaxy2.jpg" alt="" />
+              <p>
+                恒星やガス状の星間物質や宇宙塵,正体が詳しく分かっていない暗黒物質などが重力によって拘束された巨大な天体のこと。<br />例:天の川銀河
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+            <div
+              class="detail"
+              data-description="重力的にまとまりをもった宇宙塵や星間ガスなどからなる天体のこと。"
+            >
+              <h2>星雲</h2>
+              <img src="./assets/img/nebula.jpg" alt="" />
+              <p>
+                重力的にまとまりをもった宇宙塵や星間ガスなどから成る天体のこと。<br />例:オリオン座の大星雲(M42)
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+            <div
+              class="detail"
+              data-description="宇宙空間に存在する天体のうち,極めて高密度で,極端に重力が強いために物質だけでなく光さえ脱出することが出来ない天体。太陽系を含む天の川銀河の中心にはいて座*というブラックホールがある。"
+            >
+              <h2>ブラックホール</h2>
+              <img src="./assets/img/black-hole.jpg" alt="" />
+              <p>
+                宇宙空間に存在する天体のうち,極めて高密度で,極端に重力が強いために物質だけでなく光さえ脱出することができない天体のこと。<br />例:いて座A*
+              </p>
+              <button class="detail-button">詳細を見る</button>
+            </div>
+          </div>
+          <div id="modal" class="hidden">
+            <div class="modal-content">
+              <h2 id="modal-title"></h2>
+              <p id="modal-description"></p>
+              <button id="modal-close">閉じる</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="section4">
+          <h2 class="section-title">Explore the Universe</h2>
+          <div class="title_container">
+            <a href="./solar.html" class="card">
+              <div class="image_overlay">
+                <img src="./assets/img/solar_intro.jpg" alt="太陽系" />
+                <span>太陽系について</span>
+              </div>
+            </a>
+          </div>
+          <div class="title_container">
+            <a href="./star.html" class="card">
+              <div class="image_overlay">
+                <img src="./assets/img/galaxy4.jpg" alt="銀河" />
+                <span>有名な銀河について</span>
+              </div>
+            </a>
+          </div>
+          <div class="title_container">
+            <a href="./constellation.html" class="card">
+              <div class="image_overlay">
+                <img src="./assets/img/constellation.jpg" alt="星座" />
+                <span>星座について</span>
+              </div>
+            </a>
+          </div>
+          <div class="title_container">
+            <a href="./astroneer.html" class="card">
+              <div class="image_overlay">
+                <img src="./assets/img/astrorabe.jpg" alt="天文学者" />
+                <span>有名な天文学者について</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section id="section5">
+          <div class="animated-card">
+            <div class="card-content">
+              <h2>最新情報はこちら！</h2>
+              <a
+                href="https://www.isas.jaxa.jp/"
+                target="_blank"
+                class="animated-link"
+                >JAXA公式サイト</a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer id="footer">
+        <div id="return_home" class="footer_button">
+          <a href="./home.html">
+            <i class="fa-solid fa-earth-americas fa-3x"></i>
+          </a>
+        </div>
+        <div class="container">
+          <p id="nasa">JAXAの公式アカウントはこちら</p>
+          <div id="container_sns">
+            <a
+              href="https://x.com/ISAS_JAXA?ref_src=twsrc%5Etfw"
+              target="_blank"
+            >
+              <div class="btn btn--1">
+                <div class="content">
+                  <div class="front">
+                    <div class="border"></div>
+                    <i class="fa-brands fa-x-twitter fa-2x"></i>
+                  </div>
+                  <div class="back">
+                    <div class="border"></div>
+                    <p>★</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="https://www.youtube.com/user/jaxasgm" target="_blank">
+              <div class="btn btn--2">
+                <div class="content">
+                  <div class="front">
+                    <div class="border"></div>
+                    <i class="fab fa-youtube"></i>
+                  </div>
+                  <div class="back">
+                    <div class="border"></div>
+                    <p>★</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/isas_jaxa/" target="_blank">
+              <div class="btn btn--3">
+                <div class="content">
+                  <div class="front">
+                    <div class="border"></div>
+                    <i class="fab fa-instagram"></i>
+                  </div>
+                  <div class="back">
+                    <div class="border"></div>
+                    <p>★</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div id="return_top">
+          <button class="footer_button" id="toTop">▲</button>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./assets/js/home.js"></script>
+  </body>
+</html>
