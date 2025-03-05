@@ -122,9 +122,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("mousemove", (e) => {
-  const cursor = document.querySelector(".custom-cursor");
-  cursor.style.left = e.pageX + "px";
-  cursor.style.top = e.pageY + "px";
-});
+const cursor = document.querySelector(".custom-cursor");
 
+// マウス移動イベント（PC用）
+document.addEventListener("mousemove", (e) => {
+  if (window.innerWidth > 768) { // PC画面のみ
+    cursor.style.display = "block";
+    cursor.style.left = e.pageX + "px";
+    cursor.style.top = e.pageY + "px";
+    cursor.classList.remove("fade-out"); // フェードアウト解除
+  }
+});

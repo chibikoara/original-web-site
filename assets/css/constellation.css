@@ -4,7 +4,7 @@ html {
   width: 100%;
   font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic",
     メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
-  background-image: url(../img/back1.jpg);
+  background-image: url(../img/const_back.jpg);
   background-size: cover;
   overflow-x: hidden;
 }
@@ -15,8 +15,8 @@ html {
 
 /* カスタムカーソルのスタイル */
 .custom-cursor {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border: 2px solid white; /* ボーダーを追加 */
   border-radius: 50%; /* 円形にする場合 */
   background: url("../img/utyuu4.png") center/contain no-repeat;
@@ -40,7 +40,7 @@ html {
   width: 100%;
   height: 100%;
   overflow: none;
-  background-image: url(../img/galaxy3.jpg);
+  background-image: url(../img/constellation.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -315,12 +315,11 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px dotted rgb(60, 59, 59);
 }
 
 /* タイトル全体のスタイル */
 .title-container {
-  left: 200px;
+  left: 300px;
   position: relative;
   height: 100vh; /* 全画面高さ */
   display: flex;
@@ -353,7 +352,7 @@ main {
 /* タブレットサイズ調整 */
 @media (max-width: 1024px) {
   .vertical-title {
-    font-size: 200px; /* フォントサイズを縮小 */
+    font-size: 300px; /* フォントサイズを縮小 */
   }
 
   .title-container {
@@ -380,8 +379,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px dotted rgb(60, 59, 59);
   margin-top: 100px;
+  margin-bottom: 200px;
 }
 
 #box-intro {
@@ -394,6 +393,10 @@ main {
   align-items: center;
 }
 
+#box-intro img {
+  border-radius: 30px;
+}
+
 #box-intro h2 {
   color: white;
   font-size: 400%;
@@ -402,41 +405,11 @@ main {
 #intro {
   font-size: 30px;
   color: white;
-}
-
-.test-slick {
-  width: 100%;
-  max-width: 800px;
-  margin: 15px auto;
-  overflow: hidden;
-  border: #ffffff;
-  border-radius: 20px;
-}
-
-.test-slick__item {
-  margin-right: 5px;
-  margin-left: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.test-slick__item img {
-  height: auto;
-  width: 100%;
-}
-
-.add-anime {
-  animation: zoom-anime 10s linear 0s normal both;
-}
-
-@keyframes zoom-anime {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.5);
-  }
+  text-align: center;
+  margin: 30px;
+  background-color: #1e302f;
+  border-radius: 10px;
+  border:1px solid whitesmoke;
 }
 
 /* レスポンシブ対応 */
@@ -487,130 +460,518 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
   height: auto;
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
-#sec3_title {
-  color: white;
-  background-color: transparent;
-  font-size: 40px;
-}
-
-/* 銀河コンテナのスタイル */
-.galaxy-container {
-  display: flex;
-  flex-wrap: wrap; /* 幅が足りない場合に折り返し */
-  justify-content: center; /* コンテンツを中央揃え */
-  gap: 1rem; /* 要素間のスペース */
-  margin: 1rem auto;
-}
-
-/* 個々の銀河のスタイル */
-.gala {
-  flex: 0 1 calc(50% - 1rem); /* 幅を1/3に */
-  background-color: #222;
+/* 全体コンテナ */
+.constellation-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 50px auto;
+  background: transparent;
   color: #fff;
-  border: 1px solid #444;
-  border-radius: 10px;
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.gala:hover {
-  transform: scale(1.05); /* ホバー時に拡大 */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  filter: brightness(150%);
-}
-
-/* 画像のスタイル */
-.gala_img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
-}
-
-/* 銀河タイトル */
-.gala_title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-@media (max-width: 768px) {
-  .gala {
-    flex: 0 1 100%; /* 幅を100%に */
-  }
-}
-
-#modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* 中心テキスト */
+.center-text {
+  padding: 10px 20px;
+  background-color: #1e1e30;
+  border-radius: 30px;
+  position: absolute;
+  font-size: 3rem;
+  color: #f8b400;
+  font-weight: bold;
+  z-index: 10;
+}
+
+/* 星座画像を配置する円軌道 */
+.orbit {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 星座画像 */
+.constellation {
+  text-decoration: none;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #6e5858;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.constellation img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+/* ラベル（非表示状態） */
+.constellation-label {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 1rem;
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ホバー時の効果 */
+.constellation:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.constellation:hover img {
+  opacity: 0.8;
+}
+
+.constellation:hover .constellation-label {
+  opacity: 1;
+}
+
+/* 星座画像の配置（円形） */
+.orbit .constellation {
+  transform: translate(-50%, -50%);
+}
+
+/* 配置計算 */
+.orbit .constellation:nth-child(1) {
+  --angle: calc((360deg / 12) * (1 - 1)); /* 12分割の角度計算 */
+  top: calc(50% + 300px * cos(var(--angle))); /* 半径300px */
+  left: calc(50% + 300px * sin(var(--angle))); /* 半径300px */
+}
+.orbit .constellation:nth-child(2) {
+  --angle: calc((360deg / 12) * (2 - 1)); /* 12分割の角度計算 */
+  top: calc(50% + 300px * cos(var(--angle))); /* 半径300px */
+  left: calc(50% + 300px * sin(var(--angle))); /* 半径300px */
+}
+.orbit .constellation:nth-child(3) {
+  --angle: calc((360deg / 12) * (3 - 1)); /* 12分割の角度計算 */
+  top: calc(50% + 300px * cos(var(--angle))); /* 半径300px */
+  left: calc(50% + 300px * sin(var(--angle))); /* 半径300px */
+}
+.orbit .constellation:nth-child(4) {
+  --angle: calc((360deg / 12) * (4 - 1)); /* 12分割の角度計算 */
+  top: calc(50% + 300px * cos(var(--angle))); /* 半径300px */
+  left: calc(50% + 300px * sin(var(--angle))); /* 半径300px */
+}
+.orbit .constellation:nth-child(5) {
+  --angle: calc((360deg / 12) * (5 - 1)); /* 12分割の角度計算 */
+  top: calc(50% + 300px * cos(var(--angle))); /* 半径300px */
+  left: calc(50% + 300px * sin(var(--angle))); /* 半径300px */
+}
+.orbit .constellation:nth-child(6) {
+  --angle: calc((360deg / 12) * (6 - 1)); /* 12分割の角度計算 */
+  top: calc(50% + 300px * cos(var(--angle))); /* 半径300px */
+  left: calc(50% + 300px * sin(var(--angle))); /* 半径300px */
+}
+.orbit .constellation:nth-child(7) {
+  --angle: calc((360deg / 12) * (7 - 1)); /* 12分割の角度計算 */
+  top: calc(50% + 300px * cos(var(--angle))); /* 半径300px */
+  left: calc(50% + 300px * sin(var(--angle))); /* 半径300px */
+}
+.orbit .constellation:nth-child(8) {
+  --angle: calc((360deg / 12) * (8 - 1)); /* 12分割の角度計算 */
+  top: calc(50% + 300px * cos(var(--angle))); /* 半径300px */
+  left: calc(50% + 300px * sin(var(--angle))); /* 半径300px */
+}
+.orbit .constellation:nth-child(9) {
+  --angle: calc((360deg / 12) * (9 - 1)); /* 12分割の角度計算 */
+  top: calc(50% + 300px * cos(var(--angle))); /* 半径300px */
+  left: calc(50% + 300px * sin(var(--angle))); /* 半径300px */
+}
+.orbit .constellation:nth-child(10) {
+  --angle: calc((360deg / 12) * (10 - 1)); /* 12分割の角度計算 */
+  top: calc(50% + 300px * cos(var(--angle))); /* 半径300px */
+  left: calc(50% + 300px * sin(var(--angle))); /* 半径300px */
+}
+.orbit .constellation:nth-child(11) {
+  --angle: calc((360deg / 12) * (11 - 1)); /* 12分割の角度計算 */
+  top: calc(50% + 300px * cos(var(--angle))); /* 半径300px */
+  left: calc(50% + 300px * sin(var(--angle))); /* 半径300px */
+}
+.orbit .constellation:nth-child(12) {
+  --angle: calc((360deg / 12) * (12 - 1)); /* 12分割の角度計算 */
+  top: calc(50% + 300px * cos(var(--angle))); /* 半径300px */
+  left: calc(50% + 300px * sin(var(--angle))); /* 半径300px */
+}
+
+@media (max-width: 1024px) {
+  /* 星座コンテナのレイアウト調整 */
+  .constellation-container {
+    display: flex;
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  /* タイトルの位置調整 */
+  .center-text {
+    position: static; /* デフォルト位置に */
+    margin-bottom: 100px; /* 画像との間隔を設定 */
+    font-size: 2rem; /* タイトルサイズを少し縮小 */
+    text-align: center;
+  }
+
+  /* 画像のグリッド配置 */
+  .orbit {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding-left: 15%;
+  }
+
+  .constellation {
+    
+    position: static;    
+    width: 160px;
+    height: 100px;
+    margin: 0 auto;
+    transform: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .constellation img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #6e5858;
+  }
+
+  /* ラベル（常に表示） */
+  .constellation-label {
+    opacity: 1; /* 常に表示 */
+    writing-mode: vertical-lr;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    position: static;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+  }
+}
+
+/* 768px以下のデバイス */
+@media (max-width: 768px) {
+  /* タイトルの位置調整 */
+  .center-text {
+    position: static; /* デフォルト位置に */
+    margin-bottom: 100px; /* 画像との間隔を設定 */
+    font-size: 2rem; /* タイトルサイズを少し縮小 */
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  /* 画像のグリッド配置 */
+  .orbit {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    left: 40px;
+  }
+
+  .constellation {
+    
+    position: static;    
+    width: 150px;
+    height: 100px;
+    margin: 0 0;
+    transform: none;
+    border-radius: 15px;
+    
+  }
+
+  .constellation img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid #6e5858;
+  }
+
+  /* ラベル（常に表示） */
+  .constellation-label {
+    opacity: 1; /* 常に表示 */
+    font-size: 0.9rem;
+    margin-top: 5px;
+    position: static;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+  }
+}
+
+
+
+#section4 {
+  width: 100vw;
+  background-color: transparent;
+}
+
+/* メニューボタンのスタイル */
+.menu-button {
+  position: fixed;
+  bottom: 1%;
+  right: -60px; /* 初期位置（画面外） */
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: right 0.5s ease;
   z-index: 1000;
 }
 
-#modal.visible {
-  opacity: 1;
-  visibility: visible;
+/* メニューボタンが表示されるとき */
+.menu-button.show {
+  right: 20px; /* 表示位置（画面内） */
 }
 
-.modal-content {
-  background: linear-gradient(to bottom, #222, #444);
-  color: whitesmoke;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-  max-width: 500px;
-  text-align: center;
-  animation: pop-in 0.5s ease;
+/* メニューアイコンのスタイル */
+.menu-icon {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  position: relative;
 }
 
-.modal-content h2 {
-  margin-bottom: 1rem;
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  left: 0;
+  transition: 0.3s;
 }
 
-.modal-content p {
-  margin-bottom: 1.5rem;
+.menu-icon::before {
+  top: -10px;
 }
 
-#modal-close {
-  padding: 0.5rem 1rem;
-  background-color: #ff5757;
+.menu-icon::after {
+  top: 10px;
+}
+
+/* メニューコンテンツのスタイル */
+.menu-content {
+  position: fixed;
+  top: 50%;
+  right: -300px; /* 初期位置（画面外） */
+  transform: translateY(-50%);
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
+  padding: 20px;
+  border-radius: 10px;
+  transition: right 0.5s ease;
+  z-index: 999;
+  border: 1px solid whitesmoke;
+}
+
+/* メニューコンテンツが表示されるとき */
+.menu-content.show {
+  right: 1%; /* 表示位置 */
+}
+
+.menu-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-content li {
+  margin: 10px 0;
+}
+
+.menu-content a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-content a:hover {
+  text-decoration: underline;
+}
+
+.explain {
+  width: 100%;
+  height: 500px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 300px auto;
+  padding-top: 300px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.explain.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.subtitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.subtitle h3 {
+  color: white;
+  font-size: 50px;
+  margin-top: 90px;
+  z-index: 10;
+}
+
+.explain img {
+  width: 300px;
+  border-radius: 50%;
+}
+
+/* 回転アニメーションの定義 */
+@keyframes slow-rotate {
+  0% {
+    transform: rotate(0deg); /* 開始時は0度 */
+  }
+  100% {
+    transform: rotate(360deg); /* 一周 */
+  }
+}
+
+.detail {
+  background-color: rgba(237, 235, 235, 0.9);
+  width: 700px;
+  height: 300px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid black;
+}
+
+.detail-button {
+  background: linear-gradient(to right, #2c3e50, #34495e);
+  color: #ffffff;
   border: none;
   border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
 }
 
-#modal-close:hover {
-  background-color: #ff3333;
+.detail-button:hover {
+  background: linear-gradient(to right, #34495e, #2c3e50);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
 }
 
-@keyframes pop-in {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
+.detail-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* セクション4 */
+@media (max-width: 1024px) {
+  .explain {
+    flex-direction: column;
+    height: auto;
+    margin: 200px auto;
+    text-align: center;
   }
-  to {
-    transform: scale(1);
-    opacity: 1;
+  .subtitle {
+    order: 1;
+  }
+  .detail {
+    order: 2;
+  }
+  .subtitle h3 {
+    font-size: 40px;
+    margin-top: 50px;
+  }
+  .detail {
+    width: 600px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .explain {
+    margin: 100px auto;
+    padding-top: 200px;
+  }
+  .subtitle h3 {
+    font-size: 30px;
+  }
+  .detail {
+    width: 500px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .explain {
+    margin: 50px auto;
+  }
+  .subtitle h3 {
+    font-size: 24px;
+  }
+  .detail {
+    width: 100%;
+    font-size: 16px;
+    padding: 20px;
   }
 }
 
 footer {
+  margin-top: 500px;
   width: 100vw;
   height: 300px;
   display: flex;
@@ -618,7 +979,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   padding: auto 100px;
-  background: linear-gradient(to bottom, #1e1e30, #3b3b5b);
+  background: linear-gradient(to bottom, #953a2e14, #525280);
 }
 
 #return_home a {
@@ -811,7 +1172,7 @@ footer {
 
   .container {
     width: 90%; /* スマホサイズで幅を広げる */
-    min-width: 200px;
+    min-width: 300px;
   }
 
   .btn {

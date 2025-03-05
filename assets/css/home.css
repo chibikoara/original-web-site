@@ -7,7 +7,10 @@ html {
   background-image: url(../img/black.png);
   background-size: cover;
   overflow-x: hidden;
+}
 
+html {
+  overflow: hidden;
 }
 
 /* カスタムカーソルのスタイル */
@@ -16,11 +19,17 @@ html {
   height: 40px;
   border: 2px solid white; /* ボーダーを追加 */
   border-radius: 50%; /* 円形にする場合 */
-  background: url('../img/utyuu4.png') center/contain no-repeat;
+  background: url("../img/utyuu4.png") center/contain no-repeat;
   position: absolute;
   pointer-events: none; /* カーソルが要素に干渉しないようにする */
   z-index: 9999;
   transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 768px) {
+  .custom-cursor {
+    display: none;
+  }
 }
 
 /* スプラッシュ画面 */
@@ -312,23 +321,6 @@ main {
 }
 
 
-#floating-image {
-  position: fixed;
-  transform: translate(-50%, -50%);
-  width: 100px; /* 画像サイズ */
-  height: 100px;
-  z-index: 999;
-  transition: transform 2s ease; /* 移動を滑らかにする */
-
-}
-
-#floating-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* 画像のサイズを維持しつつフィット */
-}
-
-
 #section1 {
   background-image: url(../img/home_title.jpg);
   background-size: cover;
@@ -340,8 +332,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  
-
 }
 
 /* タイトル全体のスタイル */
@@ -365,9 +355,10 @@ main {
   font-weight: bold;
   opacity: 0; /* フェードイン前は非表示 */
   transform: translateZ(-100px); /* 手前からの動きを再現 */
-  transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1), transform 2s cubic-bezier(0.4, 0, 0.2, 1);
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.6);
-  
+  transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+    0 0 50px rgba(255, 255, 255, 0.6);
 }
 
 /* サブタイトル */
@@ -407,7 +398,6 @@ main {
   .vertical-subtitle {
     font-size: 30px;
   }
-
 }
 
 /* スマートフォンサイズ調整 */
@@ -430,7 +420,11 @@ main {
   position: relative;
   width: 100vw;
   min-height: 70vh;
-  background: linear-gradient(to bottom, rgba(30, 30, 48, 0.9), rgba(38, 38, 59, 0.8));
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 30, 48, 0.9),
+    rgba(38, 38, 59, 0.8)
+  );
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -481,17 +475,27 @@ main {
   transition: transform 0.3s ease; /* アニメーションスムーズに */
 }
 
-.icon:hover{
+.icon:hover {
   animation: shake 0.5s ease-in-out infinite; /* 揺れるアニメーションを適用 */
 }
 
 /* 揺れるアニメーション */
 @keyframes shake {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(5deg); }
-  50% { transform: rotate(0deg); }
-  75% { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .icon-1 {
@@ -535,13 +539,59 @@ main {
     transform: translateY(0px) rotate(0deg);
   }
 }
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  #section2 {
+    height: auto; /* 高さを自動調整 */
+    padding: 20px; /* 余白を追加 */
+  }
+
+  #box-intro {
+    height: auto; /* コンテンツに応じて高さを自動調整 */
+    flex-direction: column; /* 縦並びに変更 */
+    text-align: center; /* 中央揃え */
+  }
+
+  #box-intro h2 {
+    font-size: 200%; /* フォントサイズを縮小 */
+  }
+
+  #intro {
+    font-size: 18px; /* テキストのフォントサイズを縮小 */
+  }
+
+  #box-intro img {
+    width: 90%; /* 画像の幅を縮小 */
+    padding-right: 0; /* パディングを削除 */
+    margin-top: 20px; /* 余白を追加 */
+  }
+}
+
+/* 非常に小さい画面（スマートフォン向け） */
+@media (max-width: 480px) {
+  #box-intro h2 {
+    font-size: 150%; /* さらにフォントサイズを縮小 */
+  }
+
+  #intro {
+    font-size: 16px; /* テキストのフォントサイズをさらに縮小 */
+  }
+
+  #box-intro img {
+    width: 100%; /* 画像を画面幅いっぱいに表示 */
+  }
+}
 
 #section3 {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 40px 20px;
-  background: linear-gradient(to bottom, rgba(38, 38, 59, 0.8), rgba(51, 51, 94, 0.5));
+  background: linear-gradient(
+    to bottom,
+    rgba(38, 38, 59, 0.8),
+    rgba(51, 51, 94, 0.5)
+  );
   position: relative;
   overflow: hidden; /* 背景アニメーションを収める */
 }
@@ -569,7 +619,11 @@ main {
 
 .detail {
   flex: 0 1 calc(25% - 1rem);
-  background: linear-gradient(to bottom, rgba(30, 48, 41, 0.8), rgba(59, 71, 91, 0.5));
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 48, 41, 0.8),
+    rgba(59, 71, 91, 0.5)
+  );
   border: 1px solid #2f4053;
   border-radius: 12px;
   display: flex;
@@ -697,7 +751,6 @@ main {
   }
 }
 
-
 /* レスポンシブデザイン */
 @media (max-width: 1024px) {
   .detail {
@@ -715,7 +768,11 @@ main {
 #section4 {
   width: 100vw;
   padding: 40px 20px;
-  background: linear-gradient(to bottom,rgba(51, 51, 94, 0.5), rgba(38, 38, 59, 0.5) );
+  background: linear-gradient(
+    to bottom,
+    rgba(51, 51, 94, 0.5),
+    rgba(38, 38, 59, 0.5)
+  );
   text-align: center;
 }
 
@@ -800,8 +857,6 @@ main {
   }
 }
 
-
-
 .animated-card {
   width: 100%;
   max-width: 400px;
@@ -823,7 +878,12 @@ main {
   left: -100%;
   width: 200%;
   height: 100%;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transform: skewX(-45deg);
   transition: left 0.5s ease;
 }
@@ -851,7 +911,6 @@ main {
 .animated-link:hover {
   background-color: #007acc;
 }
-
 
 footer {
   width: 100vw;
@@ -907,13 +966,15 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 50px; /* 高さが縮む可能性を考慮して50pxに調整 */}
+  border-radius: 50px; /* 高さが縮む可能性を考慮して50pxに調整 */
+}
 
-#nasa{
+#nasa {
   color: whitesmoke;
   margin: 10px auto 0;
   font-size: 1rem; /* 相対フォントサイズに変更 */
-  text-align: center; /* テキスト中央揃え */}
+  text-align: center; /* テキスト中央揃え */
+}
 
 #container_sns {
   display: flex;
@@ -1019,7 +1080,6 @@ footer {
 }
 
 @media (max-width: 1024px) {
-
   .footer_button {
     width: 80px;
     height: 80px;
@@ -1035,7 +1095,7 @@ footer {
     height: 12vw;
     max-width: 70px;
     max-height: 70px;
-  }  
+  }
 }
 
 /* スマートフォンサイズ */
