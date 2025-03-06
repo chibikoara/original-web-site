@@ -26,7 +26,7 @@ html {
   transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .custom-cursor {
     display: none;
   }
@@ -73,6 +73,22 @@ html {
   opacity: 0;
   pointer-events: none; /* ユーザー操作をブロックしないように */
 }
+
+/* タブレットサイズ */
+@media (max-width: 1024px) {
+  #logo img {
+    width: 200px;
+  }
+}
+
+/* スマートフォンサイズ */
+@media (max-width: 768px) {
+  #logo img {
+    width: 100px;
+  }
+
+}
+
 
 /* メインコンテンツ（初期状態ではスプラッシュ画面の下に隠れている） */
 #main-content {
@@ -425,6 +441,16 @@ main {
 }
 
 /* レスポンシブ対応 */
+@media (max-width: 1024px) {
+  #section2 {
+    height: auto; /* 高さを自動調整 */
+    padding: 40px; /* 余白を追加 */
+  }
+
+}
+
+
+/* レスポンシブ対応 */
 @media (max-width: 768px) {
   #section2 {
     height: auto; /* 高さを自動調整 */
@@ -509,6 +535,12 @@ main {
 .sl_im.highlight {
   transform: scale(1.05);
 }
+@media screen and (max-width: 1024px) {
+  .side-image {
+    gap: 400px;
+  }
+}
+
 
 @media screen and (max-width: 768px) {
   .side-image {
@@ -593,7 +625,9 @@ main {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(80%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -609,7 +643,7 @@ main {
 }
 
 .modal-content {
-  background: linear-gradient(to bottom, #222, #444);
+  background: linear-gradient(to bottom, #222222f0, #444444c5);
   color: whitesmoke;
   padding: 2rem;
   border-radius: 12px;

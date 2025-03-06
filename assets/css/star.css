@@ -26,7 +26,7 @@ html {
   transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .custom-cursor {
     display: none;
   }
@@ -73,6 +73,22 @@ html {
   opacity: 0;
   pointer-events: none; /* ユーザー操作をブロックしないように */
 }
+
+/* タブレットサイズ */
+@media (max-width: 1024px) {
+  #logo img {
+    width: 200px;
+  }
+}
+
+/* スマートフォンサイズ */
+@media (max-width: 768px) {
+  #logo img {
+    width: 100px;
+  }
+
+}
+
 
 /* メインコンテンツ（初期状態ではスプラッシュ画面の下に隠れている） */
 #main-content {

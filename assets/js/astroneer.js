@@ -106,10 +106,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const detail = e.target.closest(".timeline-content");
       const title = detail.querySelector("h3").textContent;
       const description = detail.getAttribute("data-description");
+      const background = detail.getAttribute("data-bg");
 
       // モーダルに内容を設定
       modalTitle.textContent = title;
       modalDescription.textContent = description;
+
+
+      // モーダル背景画像を設定
+      modal.style.backgroundImage = `url('${background}')`;
 
       // モーダルを表示
       modal.classList.add("visible");
