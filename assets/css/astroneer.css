@@ -15,8 +15,8 @@ html {
 
 /* カスタムカーソルのスタイル */
 .custom-cursor {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border: 2px solid white; /* ボーダーを追加 */
   border-radius: 50%; /* 円形にする場合 */
   background: url("../img/utyuu4.png") center/contain no-repeat;
@@ -25,7 +25,6 @@ html {
   z-index: 9999;
   transform: translate(-50%, -50%);
 }
-
 
 @media screen and (max-width: 768px) {
   .custom-cursor {
@@ -52,6 +51,21 @@ html {
   z-index: 9999;
   opacity: 1;
   transition: opacity 1s ease; /* フェードアウトのアニメーション */
+}
+#logo {
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 2s ease-in-out; /* アニメーション設定 */
+}
+
+#logo img {
+  width: 300px;
+  background-color: white;
+  border-radius: 50%;
+  animation: slow-rotate 100s linear infinite;
 }
 
 /* フェードアウト用のクラス */
@@ -453,7 +467,6 @@ main {
   }
 }
 
-
 #timeline-section {
   width: 100%;
   padding: 50px 20px;
@@ -489,11 +502,11 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 影を追加 */
 }
 
-.sl_im{
+.sl_im {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.sl_im:hover{
+.sl_im.highlight {
   transform: scale(1.05);
 }
 
@@ -539,6 +552,7 @@ main {
 }
 
 .timeline-content {
+  border: 1px solid whitesmoke;
   flex: 0 0 60%;
   background: #283149;
   padding: 20px;
@@ -547,7 +561,7 @@ main {
   position: relative;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.timeline-content.highlight {
+.timeline-content:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(255, 200, 0, 0.5); /* 目立たせるための影 */
   z-index: 999;
@@ -563,20 +577,6 @@ main {
   line-height: 1.6;
 }
 
-.timeline-event:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 15px;
-  height: 15px;
-  background: #f8b400;
-  border: 3px solid #fff;
-  border-radius: 50%;
-  transform: translate(-50%, -100%);
-  z-index: 1;
-}
-
 .timeline-content {
   margin-top: 15px;
 }
@@ -584,6 +584,73 @@ main {
 /* Adjust content position for spacing */
 .timeline-content {
   transform: translateY(20px);
+}
+
+/* モーダルウィンドウのスタイル */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 1000;
+}
+
+#modal.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: linear-gradient(to bottom, #222, #444);
+  color: whitesmoke;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  text-align: center;
+  animation: pop-in 0.5s ease;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  margin-bottom: 1.5rem;
+}
+
+#modal-close {
+  padding: 0.5rem 1rem;
+  background-color: #ff5757;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#modal-close:hover {
+  background-color: #ff3333;
+}
+
+/* モーダルのアニメーション */
+@keyframes pop-in {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 768px) {

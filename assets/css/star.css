@@ -15,8 +15,8 @@ html {
 
 /* カスタムカーソルのスタイル */
 .custom-cursor {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border: 2px solid white; /* ボーダーを追加 */
   border-radius: 50%; /* 円形にする場合 */
   background: url("../img/utyuu4.png") center/contain no-repeat;
@@ -51,6 +51,22 @@ html {
   opacity: 1;
   transition: opacity 1s ease; /* フェードアウトのアニメーション */
 }
+#logo {
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 2s ease-in-out; /* アニメーション設定 */
+}
+
+#logo img {
+  width: 300px;
+  background-color: white;
+  border-radius: 50%;
+  animation: slow-rotate 100s linear infinite;
+}
+
 
 /* フェードアウト用のクラス */
 #splash.fade-out {

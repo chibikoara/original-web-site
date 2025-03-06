@@ -15,8 +15,8 @@ html {
 
 /* カスタムカーソルのスタイル */
 .custom-cursor {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border: 2px solid white; /* ボーダーを追加 */
   border-radius: 50%; /* 円形にする場合 */
   background: url("../img/utyuu4.png") center/contain no-repeat;

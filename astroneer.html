@@ -28,7 +28,9 @@
     />
   </head>
   <body>
-    <div id="splash"></div>
+    <div id="splash">
+      <div id="logo"><img src="./assets/img/space.jpg" alt="" /></div>
+    </div>
 
     <div id="main-content">
       <header class="header">
@@ -84,17 +86,17 @@
           <h2 class="section-title">天文学の歴史</h2>
           <div class="sl">
             <div class="side-image left">
-              <div class="sl_im" data-target="aristotle">
+              <div class="sl_im" id="aristotle">
                 <img
                   id="aris"
                   src="./assets/img/aristo.jpg"
                   alt="アリストテレス"
                 />
               </div>
-              <div class="sl_im" data-target="cope">
+              <div class="sl_im" id="cope">
                 <img src="./assets/img/coperunics.webp" alt="cope" />
               </div>
-              <div class="sl_im" data-target="kep">
+              <div class="sl_im" id="kep">
                 <img src="./assets/img/kepura.jpg" alt="kepu" />
               </div>
             </div>
@@ -102,69 +104,69 @@
             <div class="timeline">
               <div class="timeline-event">
                 <div class="timeline-date">紀元前384年</div>
-                <div class="timeline-content" id="aristotle">
+                <div class="timeline-content" data-target="aristotle" data-description="BC384-BC322:プラトンやソクラテスといった古代ギリシアの有名な哲学者の中の1人で,プラトンの弟子である。知的探求つまり科学的な探求全般を指した当時の哲学を,倫理学,自然科学を始めとした学問として分類し,それらの体系を築いた業績から「万学の祖」とも呼ばれる。「天体論」という天体について書かれた哲学書を執筆しており,そこでは地球が宇宙の中心で静止していると考える天動説が述べられている。"
+                >
                   <h3>アリストテレス</h3>
                   <p>
-                    古代ギリシャの哲学者。宇宙は地球を中心とする球形の構造を持つと主張し、この「地球中心説」は中世まで天文学の基盤となりました。
+                    宇宙は地球を中心とする球形の構造を持つと主張し,この「地球中心説」は中世まで天文学の基盤となった。
                   </p>
                 </div>
               </div>
               <div class="timeline-event">
                 <div class="timeline-date">紀元後90年頃</div>
-                <div class="timeline-content" id="ptre">
+                <div class="timeline-content" data-target="ptre" data-description="83年-168年:数学や天文学,占星学や音楽学など幅広い分野にわたる業績を残した古代ローマの学者。「アルマゲスト」という彼の著書では天体観測を行っていたことが分かっており,天動説(地球中心説)という考え方を世界に広めた人物である。彼によって天動説が世界の常識となり,現代では当たり前となっている地球が動いているという地動説(太陽中心説)の考え方は旧約聖書のある描写に反する異端とされて,徹底的に排除されてきた。">
                   <h3>プトレマイオス</h3>
                   <p>
-                    「アルマゲスト」を著し、天動説（地球中心説）を体系化しました。このモデルは天文学の基本理論として1400年近く支持されました。
+                    天動説（地球中心説）という考え方を体系化した。このモデルは天文学の基本理論として1400年近く支持された。
                   </p>
                 </div>
               </div>
               <div class="timeline-event">
                 <div class="timeline-date">1543年</div>
-                <div class="timeline-content" id="cope">
+                <div class="timeline-content" data-target="cope" data-description="1473年-1543年:ポーランド出身の天文学者。「天球の回転について」を著し,当時圧倒的に主流だった天動説を覆す地動説(太陽中心説)を唱えた。これ以降少しずつ地動説が広まっていったがこの当時はまだ証明が不十分で天動説の方が主流だった。">
                   <h3>コペルニクス</h3>
                   <p>
-                    地動説を提唱し、「天球の回転について」を発表。天文学のパラダイムシフトを引き起こしました。
+                    今までの天動説とは異なった考えである地動説を提唱し,「天文学のパラダイムシフトを引き起こしました。
                   </p>
                 </div>
               </div>
               <div class="timeline-event">
                 <div class="timeline-date">1609年</div>
-                <div class="timeline-content" id="gari">
+                <div class="timeline-content" data-target="gari" data-description="1564年-1642年:イタリアの自然哲学,天文学,数学者。近代科学の父,天文学の父と呼ばれており,それぞれの分野で大きな貢献をした。天文については正確な天体観測によって当時主流だった天動説を受け入れず,自ら地動説を導き出した。ただ太陽中心説は当時異端とみなされていたため彼は異端審問にかけられ,様々な拷問をされた上に有罪判決をうけた。ただこれはガリレオの死後約350年後に無罪が確定した。">
                   <h3>ガリレオ・ガリレイ</h3>
                   <p>
-                    望遠鏡を改良し、月のクレーターや木星の衛星を観測。これにより地動説を支持する証拠を示しました。
+                    望遠鏡を改良し,月のクレーターや木星の衛星を観測。これにより地動説がより支持されるようになった。
                   </p>
                 </div>
               </div>
               <div class="timeline-event">
                 <div class="timeline-date">1619年</div>
-                <div class="timeline-content" id="kep">
+                <div class="timeline-content" data-target="kep" data-description="1571年-1630年:ドイツの天文学者。">
                   <h3>ヨハネス・ケプラー</h3>
                   <p>
-                    「ケプラーの法則」を発表し、惑星が楕円軌道を描いて太陽を周回していることを説明しました。
-                  </p>
-                </div>
-              </div>
-              <div class="timeline-event">
-                <div class="timeline-date">2023年</div>
-                <div class="timeline-content">
-                  <h3>最新の天文学</h3>
-                  <p>
-                    ウェブ望遠鏡が本格的に運用され、遠方銀河やエクソプラネットの観測が進展しました。
+                    「ケプラーの法則」を発表し,惑星が楕円軌道を描いて太陽を周回していることを説明した。
                   </p>
                 </div>
               </div>
             </div>
             <div class="side-image right">
-              <div class="sl_im" data-target="ptre">
+              <div class="sl_im" id="ptre">
                 <img src="./assets/img/ptremaiosu.jpg" alt="ptre" />
               </div>
-              <div class="sl_im" data-target="gari">
+              <div class="sl_im" id="gari">
                 <img src="./assets/img/garireo.jpg" alt="gari" />
               </div>
             </div>
           </div>
         </section>
+        <div id="modal" class="hidden">
+          <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <button id="modal-close">閉じる</button>
+          </div>
+        </div>
+
       </main>
       <footer id="footer">
         <div id="return_home" class="footer_button">

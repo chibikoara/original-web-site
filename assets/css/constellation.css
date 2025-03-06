@@ -51,6 +51,22 @@ html {
   opacity: 1;
   transition: opacity 1s ease; /* フェードアウトのアニメーション */
 }
+#logo {
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 2s ease-in-out; /* アニメーション設定 */
+}
+
+#logo img {
+  width: 300px;
+  background-color: white;
+  border-radius: 50%;
+  animation: slow-rotate 100s linear infinite;
+}
+
 
 /* フェードアウト用のクラス */
 #splash.fade-out {

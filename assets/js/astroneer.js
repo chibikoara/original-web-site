@@ -40,8 +40,6 @@ $(document).ready(function () {
   $("#toTop").on("click", function () {
     $("html, body").animate({ scrollTop: 0 }, 1000);
   });
-
-
 });
 
 //背景のふつふつ動く点の生成
@@ -67,17 +65,15 @@ for (let i = 1; i <= 100; i++) {
   circleContainer.appendChild(circle);
 }
 
-
 document.addEventListener("mousemove", (e) => {
   const cursor = document.querySelector(".custom-cursor");
   cursor.style.left = e.pageX + "px";
   cursor.style.top = e.pageY + "px";
 });
 
-
-document.querySelectorAll(".sl_im").forEach((image) => {
-  image.addEventListener("mouseenter", () => {
-    const targetId = image.getAttribute("data-target");
+document.querySelectorAll(".timeline-content").forEach((event) => {
+  event.addEventListener("mouseenter", () => {
+    const targetId = event.getAttribute("data-target");
     const targetElement = document.getElementById(targetId);
 
     // 強調表示を追加
@@ -86,13 +82,49 @@ document.querySelectorAll(".sl_im").forEach((image) => {
     }
   });
 
-  image.addEventListener("mouseleave", () => {
-    const targetId = image.getAttribute("data-target");
+  event.addEventListener("mouseleave", () => {
+    const targetId = event.getAttribute("data-target");
     const targetElement = document.getElementById(targetId);
 
     // 強調表示を削除
     if (targetElement) {
       targetElement.classList.remove("highlight");
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("modal");
+  const modalTitle = document.getElementById("modal-title");
+  const modalDescription = document.getElementById("modal-description");
+  const closeModalButton = document.getElementById("modal-close");
+  const detailButtons = document.querySelectorAll(".timeline-content");
+
+  // ボタンをクリックしたときの処理
+  detailButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const detail = e.target.closest(".timeline-content");
+      const title = detail.querySelector("h3").textContent;
+      const description = detail.getAttribute("data-description");
+
+      // モーダルに内容を設定
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+
+      // モーダルを表示
+      modal.classList.add("visible");
+    });
+  });
+
+  // モーダルを閉じる処理
+  closeModalButton.addEventListener("click", () => {
+    modal.classList.remove("visible");
+  });
+
+  // モーダル外をクリックして閉じる処理
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("visible");
     }
   });
 });
