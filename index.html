@@ -30,6 +30,44 @@
               ><img src="./assets/img/space.jpg" alt=""
             /></a>
           </h1>
+          <!-- 翻訳ボタン -->
+          <button class="translate-btn" onclick="translatePage('en')">
+            英語に翻訳
+          </button>
+          <button class="translate-btn" onclick="translatePage('ja')">
+            日本語に戻す
+          </button>
+
+          <div id="google_translate_element" style="display: none"></div>
+
+          <script type="text/javascript">
+            // Google翻訳ウィジェットの初期化
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement(
+                { pageLanguage: 'ja', includedLanguages: 'en,ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+                'google_translate_element'
+              );
+            }
+        
+            // 翻訳ボタンの動作
+            function translatePage(lang) {
+              const checkFrame = setInterval(() => {
+                const frame = document.querySelector('iframe.goog-te-menu-frame');
+                if (frame) {
+                  clearInterval(checkFrame); // フレームが読み込まれたら停止
+                  const buttons = frame.contentDocument.querySelectorAll('.goog-te-menu2-item span.text');
+                  buttons.forEach(button => {
+                    if (button.innerText === lang) {
+                      button.click();
+                    }
+                  });
+                }
+              }, 500); // 0.5秒ごとに確認
+            }
+          </script>          <script
+            type="text/javascript"
+            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          ></script>
           <button type="button" class="hamburger">
             <span></span>
           </button>
